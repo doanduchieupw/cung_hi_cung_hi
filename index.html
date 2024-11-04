@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chúc mừng 2 bạn trẻ</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+      body {
+        font-family: "Ubuntu", sans-serif;
+        margin: 0;
+      }
+
+      .container {
+        width: 100%;
+        height: calc(100vh - 1px);
+      }
+
+      .terminal_toolbar {
+        display: flex;
+        height: 30px;
+        align-items: center;
+        padding: 0 8px;
+        box-sizing: border-box;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: linear-gradient(#504b45 0%, #3c3b37 100%);
+      }
+
+      .butt {
+        display: flex;
+        align-items: center;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-right: 5px;
+        font-size: 8px;
+        height: 12px;
+        width: 12px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 100%;
+        background: linear-gradient(#7d7871 0%, #595953 100%);
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 0px 1px 0px #41403a, 0px 1px 1px 0px #474642;
+      }
+
+      .btn-color {
+        background: #ee411a;
+      }
+
+      .btn:hover {
+        cursor: pointer;
+      }
+
+      .btn:focus {
+        outline: none;
+      }
+
+      .butt--exit {
+        background: linear-gradient(#f37458 0%, #de4c12 100%);
+      }
+
+      .user {
+        color: #d5d0ce;
+        margin-left: 6px;
+        font-size: 14px;
+        line-height: 15px;
+      }
+
+      .terminal_body {
+        background: rgba(56, 4, 40, 0.9);
+        height: calc(100% - 30px);
+        padding-top: 2px;
+        margin-top: -1px;
+        font-size: 36px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      .terminal_promt {
+        display: flex;
+        align-items: center;
+      }
+
+      .terminal_promt span {
+        margin-left: 4px;
+      }
+
+      .terminal_user {
+        color: #7eda28;
+      }
+
+      .terminal_location {
+        color: #4878c0;
+      }
+
+      .terminal_bling {
+        color: #dddddd;
+      }
+
+      .terminal_cursor {
+        display: inline-block;
+        height: 32px;
+        width: 12px;
+        margin-left: 10px;
+        animation: curbl 1200ms linear infinite;
+      }
+
+      .terminal_line {
+        color: #00a67d;
+      }
+
+      .terminal_command {
+        color: #e9950c;
+      }
+
+      .terminal_line-2 {
+        padding-left: 346px;
+      }
+
+      @keyframes curbl {
+        0% {
+          background: #ffffff;
+        }
+
+        49% {
+          background: #ffffff;
+        }
+
+        60% {
+          background: transparent;
+        }
+
+        99% {
+          background: transparent;
+        }
+
+        100% {
+          background: #ffffff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container_terminal"></div>
+      <div class="terminal_toolbar">
+        <div class="butt">
+          <button class="btn btn-color"></button>
+          <button class="btn"></button>
+          <button class="btn"></button>
+        </div>
+        <p class="user">hieuonesy@crushonu.com: ~</p>
+      </div>
+      <div class="terminal_body">
+        <div class="terminal_promt">
+          <span class="terminal_user">crushonu@admin:</span>
+          <span class="terminal_location">~</span>
+          <span class="terminal_bling">$</span>
+          <span class="terminal_line"
+            ><span class="terminal_command">echo</span> "🎉 Congratulations on
+            your Wedding! 🎉"
+          </span>
+        </div>
+        <div class="terminal_promt">
+          <span class="terminal_line terminal_line-2"
+            ><span class="terminal_command">echo</span> "Today, two souls become
+            one heart. May you both walk this new path hand in hand, side by
+            side, in perfect harmony."
+            <span class="terminal_cursor"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script>
+      var count = 200;
+      var defaults = {
+        origin: { y: 0.7 },
+      };
+      function fire(particleRatio, opts) {
+        confetti({
+          ...defaults,
+          ...opts,
+          particleCount: Math.floor(count * particleRatio),
+        });
+      }
+
+      const fireworks = () => {
+        fire(0.25, {
+          spread: 26,
+          startVelocity: 55,
+        });
+        fire(0.2, {
+          spread: 60,
+        });
+        fire(0.35, {
+          spread: 100,
+          decay: 0.91,
+          scalar: 0.8,
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 25,
+          decay: 0.92,
+          scalar: 1.2,
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 45,
+        });
+      };
+
+      setInterval(fireworks, 3000);
+    </script>
+  </body>
+</html>
